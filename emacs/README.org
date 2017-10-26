@@ -1,0 +1,12 @@
+
+
+* emacs config
+
+there is a standalone repo for emacs config
+
+#+BEGIN_SRC sh
+git clone https://github.com/samsonwang/emacs.d.git
+#+END_SRC
+
+
+

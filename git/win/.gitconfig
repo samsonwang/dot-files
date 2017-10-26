@@ -1,0 +1,7 @@
+[user]
+	email = zl.wang@foxmail.com
+	name = SamsonWang
+[http]
+	proxy = socks5://127.0.0.1:1080
+[https]
+	proxy = socks5://127.0.0.1:1080
