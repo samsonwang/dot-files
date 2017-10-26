@@ -1,2 +1,0 @@
-# ConfigCollection
-Personal Config

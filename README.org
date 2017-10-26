@@ -1,0 +1,7 @@
+
+
+* ConfigCollection
+
+Personal Config for daily software
+
+
