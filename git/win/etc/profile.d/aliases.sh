@@ -29,7 +29,7 @@ alias gdc='git diff --cached'
 alias gco='git checkout'
 alias gps='git push'
 alias gpl='git pull'
-
+alias gf='git fetch'
 
 case "$TERM" in
 xterm*)
