@@ -1,11 +1,10 @@
 
-
 * emacs config
 
 there is a standalone repo for emacs config
 
-#+BEGIN_SRC sh
-git clone https://github.com/samsonwang/emacs.d.git
+#+BEGIN_SRC shell
+git clone https://github.com/samsonwang/emacs.d.git ~/.emacs.d
 #+END_SRC
 
 
