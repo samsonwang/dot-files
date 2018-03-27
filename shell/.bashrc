@@ -38,4 +38,5 @@ alias gco='git checkout'
 alias gps='git push'
 alias gpl='git pull'
 alias gf='git fetch'
+alias gl='git log --graph'
 
