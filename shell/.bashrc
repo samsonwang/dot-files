@@ -1,3 +1,4 @@
+# .bashrc is used for interactive non-login shells
 
 # shell prompt shows full path
 #export PS1="\u @ \W$ "
@@ -39,4 +40,9 @@ alias gps='git push'
 alias gpl='git pull'
 alias gf='git fetch'
 alias gl='git log --graph'
+
+# user local bash config
+if [ -f ~/.bash_local ]; then
+    source .bash_local
+fi
 

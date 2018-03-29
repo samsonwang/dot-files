@@ -1,7 +1,7 @@
-#.bash_profile
+#.bash_profile is used for login shells
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+    source ~/.bashrc
 fi
 
