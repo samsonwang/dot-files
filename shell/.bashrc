@@ -1,5 +1,10 @@
 # .bashrc is used for interactive non-login shells
 
+# source global definitions
+if [ -f /etc/bashrc]; then
+  source /etc/bashrc
+fi
+
 # shell prompt shows full path
 #export PS1="\u @ \W$ "
 #\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$
