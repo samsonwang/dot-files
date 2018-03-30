@@ -48,6 +48,6 @@ alias gl='git log --graph'
 
 # user local bash config
 if [ -f ~/.bash_local ]; then
-    source .bash_local
+    source ~/.bash_local
 fi
 
