@@ -1,7 +1,7 @@
 # .bashrc is used for interactive non-login shells
 
 # source global definitions
-if [ -f /etc/bashrc]; then
+if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
