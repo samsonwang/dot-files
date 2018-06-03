@@ -7,8 +7,8 @@ set bell-style visible
 # case insensitive completion
 set completion-ignore-case on
 
-# 
-set show-all-if-ambiguous on
+# do not show completion candidate
+# set show-all-if-ambiguous on
 
 # Ask before displaying >40 items
 set completion-query-items 40
