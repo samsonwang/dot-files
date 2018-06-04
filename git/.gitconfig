@@ -9,3 +9,5 @@
 	autocrlf = false
 [credential]
 	helper = store
+[push]
+	default = simple
