@@ -27,6 +27,9 @@ alias ..5="cd ../../../../.."
 # make dir and cd into it
 function mkdircd() { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
+# record timestamp in history
+export HISTTIMEFORMAT='%F %T '
+
 # better list files
 alias ll='ls -lh'
 alias la='ll -a'
