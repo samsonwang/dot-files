@@ -6,14 +6,26 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # shell prompt shows full path
-#export PS1="\u @ \W$ "
-#\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$
+#export PS1="[\033[0;32m\u\033[0m@\033[0;35m\h\033[0m \033[1;33m\W\033[0m]\$ "
 
 # perfer english as default
 export LANG="en_US.utf-8"
 
 # change CDPATH for cd command
 export CDPATH=.:~:/etc:/var
+
+# correct mistyped directory names on cd
+shopt -s cdspell
+
+# cd alias
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+# make dir and cd into it
+function mkdircd() { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 # better list files
 alias ll='ls -lh'
