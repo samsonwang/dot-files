@@ -12,6 +12,9 @@ fi
 # perfer english as default
 export LANG="en_US.utf-8"
 
+# change CDPATH for cd command
+export CDPATH=.:~:/etc:/var
+
 # better list files
 alias ll='ls -lh'
 alias la='ll -a'
