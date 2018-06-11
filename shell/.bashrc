@@ -5,8 +5,13 @@ if [ -f /etc/bashrc ]; then
   source /etc/bashrc
 fi
 
+# deepin bashrc
+if [ -f /etc/bash.bashrc ]; then
+    source /etc/bash.bashrc
+fi
+
 # shell prompt shows full path
-#export PS1="[\033[0;32m\u\033[0m@\033[0;35m\h\033[0m \033[1;33m\W\033[0m]\$ "
+export PS1="\033[0;32m\u\033[0m@\033[0;35m\h\033[0m:\033[1;33m\W\033[0m\$ "
 
 # perfer english as default
 export LANG="en_US.utf-8"
@@ -31,6 +36,7 @@ function mkdircd() { mkdir -p "$@" && eval cd "\"\$$#\""; }
 export HISTTIMEFORMAT='%F %T '
 
 # better list files
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ll -a'
 
