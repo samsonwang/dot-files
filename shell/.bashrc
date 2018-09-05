@@ -11,7 +11,7 @@ if [ -f /etc/bash.bashrc ]; then
 fi
 
 # shell prompt shows full path
-export PS1="\033[0;32m\u\033[0m@\033[0;35m\h\033[0m:\033[1;33m\W\033[0m\$ "
+export PS1="\033[0;32m\u\033[0m@\033[0;35m\h\033[0m:\033[1;33m\W\033[0m\\$ "
 
 # perfer english as default
 export LANG="en_US.utf-8"
@@ -74,4 +74,3 @@ alias gl='git log --graph'
 if [ -f ~/.bash_local ]; then
     source ~/.bash_local
 fi
-
