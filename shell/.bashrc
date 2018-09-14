@@ -70,6 +70,8 @@ alias gpl='git pull'
 alias gf='git fetch'
 alias gl='git log --graph'
 
+alias grep='grep --color=auto'
+
 # user local bash config
 if [ -f ~/.bash_local ]; then
     source ~/.bash_local
