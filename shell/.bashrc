@@ -22,6 +22,9 @@ export CDPATH=.:~:/etc:/var
 # correct mistyped directory names on cd
 shopt -s cdspell
 
+# shared library path
+export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
 # cd alias
 alias ..="cd .."
 alias ..2="cd ../.."
