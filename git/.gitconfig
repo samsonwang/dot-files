@@ -11,3 +11,5 @@
 	helper = store
 [push]
 	default = simple
+[submodule]
+	recurse = true
