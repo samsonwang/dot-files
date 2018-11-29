@@ -75,7 +75,8 @@ alias gl='git log --graph'
 
 alias grep='grep --color=auto'
 
-alias g++='g++ -Wall -std=c++11'
+alias c++11='c++ -Wall -Wextra -std=c++11'
+alias c++14='c++ -Wall -Wextra -std=c++14'
 
 # user local bash config
 if [ -f ~/.bash_local ]; then
