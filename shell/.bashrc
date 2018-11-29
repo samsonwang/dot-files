@@ -51,12 +51,11 @@ alias rm='rm -i'
 alias rm=trash
 alias lrm='la ~/.trash'
 alias unrm=undelfile
-undelfile()
-{
+undelfile() {
   mv -i ~/.trash/$@ ./
 }
-trash()
-{
+
+trash() {
   mv $@ ~/.trash/
 }
 
