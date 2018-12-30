@@ -37,7 +37,7 @@ alias la='ll -a'
 alias cp='cp -i'
 
 # when delte a file, move it to trash
-#alias rm='rm -i'
+alias rrm='rm'
 alias rm=trash
 alias lrm='la ~/.trash'
 alias unrm=undelfile
