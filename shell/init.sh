@@ -7,7 +7,7 @@
 export LANG="en_US.utf-8"
 
 # change CDPATH for cd command
-export CDPATH=.:~:/etc:/var
+# export CDPATH=.:~:/etc:/var
 
 # correct mistyped directory names on cd
 shopt -s cdspell
