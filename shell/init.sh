@@ -77,6 +77,7 @@ alias grep='grep --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias rgrep='rgrep --color=auto'
 
 alias c++11='c++ -Wall -Wextra -std=c++11'
 alias c++14='c++ -Wall -Wextra -std=c++14'
