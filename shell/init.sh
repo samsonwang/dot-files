@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # shell prompt shows full path
 #export PS1="[\033[0;32m\u\033[0m@\033[0;35m\h\033[0m \033[1;33m\W\033[0m]\$ "
 
@@ -11,6 +17,10 @@ export LANG="en_US.utf-8"
 
 # correct mistyped directory names on cd
 shopt -s cdspell
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # shared library path
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
@@ -64,6 +74,9 @@ alias gf='git fetch'
 alias gl='git log --graph'
 
 alias grep='grep --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 alias c++11='c++ -Wall -Wextra -std=c++11'
 alias c++14='c++ -Wall -Wextra -std=c++14'
