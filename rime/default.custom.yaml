@@ -13,7 +13,7 @@ patch:
   switcher/caption: "〔切换〕"
   "menu/page_size": 6
   "key_binder/bindings":
-    - {accept: Shift, toggle: ascii_mode, when always}
+    - {accept: Shift, toggle: ascii_mode, when: always}
     - {accept: "Control+p", send: Up, when: composing}
     - {accept: "Control+n", send: Down, when: composing}
     - {accept: "Control+b", send: Left, when: composing}

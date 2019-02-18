@@ -1,0 +1,11 @@
+---
+name: luna_pinyin.custom
+version: "2018.10.05"
+sort: by_weight
+use_preset_vocabulary: false
+import_tables:
+  - luna_pinyin.poetry
+  - luna_pinyin.xiandaihanyuchangyongcibiao
+  - luna_pinyin.wangluoliuxingxinci
+  - luna_pinyin.jisuanjicihuidaquan
+...
