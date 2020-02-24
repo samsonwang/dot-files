@@ -3,7 +3,7 @@
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
-      *) return;;
+    *) return;;
 esac
 
 # shell prompt shows full path
@@ -64,7 +64,7 @@ alias g='git status --short -b'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit -m'
-alias gsc='git commit -S -m'
+alias gcs='git commit -S -m'
 alias gca='git commit --amend -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
