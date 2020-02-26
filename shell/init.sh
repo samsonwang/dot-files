@@ -52,11 +52,11 @@ alias rm=trash
 alias lrm='la ~/.trash'
 alias unrm=undelfile
 undelfile() {
-  mv -i ~/.trash/$@ ./
+    mv -i ~/.trash/$@ ./
 }
 
 trash() {
-  mv $@ ~/.trash/
+    mv $@ ~/.trash/
 }
 
 # git related alias
@@ -87,3 +87,5 @@ alias c++14='c++ -Wall -Wextra -std=c++14'
 if [ -f ~/.local/bash_local.sh ]; then
     source ~/.local/bash_local.sh
 fi
+
+cd $HOME
