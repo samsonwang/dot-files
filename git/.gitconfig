@@ -1,10 +1,8 @@
 [user]
 	email = wangzhilv@gmail.com
-	name = SamsonWang
-[http]
-	proxy = socks5://127.0.0.1:1080
+	name = Samson Wang
 [https]
-	proxy = socks5://127.0.0.1:1080
+    proxy = socks5://127.0.0.1:1080
 [core]
 	autocrlf = false
 [credential]
