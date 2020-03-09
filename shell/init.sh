@@ -1,19 +1,58 @@
 #!/bin/bash
 
-# If not running interactively, don't do anything
+# prevent from loading twice
+if [ -z "$_INIT_SH_LOADED" ]; then
+    _INIT_SH_LOADED=1
+else
+    return
+fi
+
+# if not running interactively, don't do anything
 case $- in
     *i*) ;;
     *) return;;
 esac
 
-# shell prompt shows full path
-#export PS1="[\033[0;32m\u\033[0m@\033[0;35m\h\033[0m \033[1;33m\W\033[0m]\$ "
+# put ~/.local/bin in PATH
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# clean up PATH, remove duplicates
+if [ -n "$PATH" ]; then
+    old_PATH=$PATH:; PATH=
+    while [ -n "$old_PATH" ]; do
+        x=${old_PATH%%:*}
+        case $PATH: in
+           *:"$x":*) ;;
+           *) PATH=$PATH:$x;;
+        esac
+        old_PATH=${old_PATH#*:}
+    done
+    PATH=${PATH#:}
+    unset old_PATH x
+fi
+
+export PATH
 
 # perfer english as default
 export LANG="en_US.utf-8"
 
+# shared library path
+export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
+# record timestamp in history
+export HISTTIMEFORMAT='%F %T '
+
+# shell prompt shows full path
+#export PS1="[\033[0;32m\u\033[0m@\033[0;35m\h\033[0m \033[1;33m\W\033[0m]\$ "
+
 # change CDPATH for cd command
 # export CDPATH=.:~:/etc:/var
+
+######################################################################
+# shell option
+######################################################################
 
 # correct mistyped directory names on cd
 shopt -s cdspell
@@ -22,8 +61,20 @@ shopt -s cdspell
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# shared library path
-export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+# case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+######################################################################
+# function
+######################################################################
+
+# make dir and cd into it
+function mkdircd() { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
+
+######################################################################
+# alias
+######################################################################
 
 # cd alias
 alias ..="cd .."
@@ -32,13 +83,7 @@ alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
-# make dir and cd into it
-function mkdircd() { mkdir -p "$@" && eval cd "\"\$$#\""; }
-
-# record timestamp in history
-export HISTTIMEFORMAT='%F %T '
-
-# better list files
+# color list files
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ll -a'
@@ -46,17 +91,8 @@ alias la='ll -a'
 # interactive when overwrite
 alias cp='cp -i'
 
-# when delte a file, move it to trash
-#alias rrm='rm'
+# safe rm
 alias rm='~/.local/rm.sh'
-#alias lrm='la ~/.trash'
-#alias unrm=undelfile
-#undelfile() {
-#    mv -i ~/.trash/$@ ./
-#}
-#trash() {
-#    mv $@ ~/.trash/
-#}
 
 # git related alias
 alias g='git status --short -b'
@@ -73,6 +109,7 @@ alias gpl='git pull'
 alias gf='git fetch'
 alias gl='git log --graph'
 
+# color grep
 alias grep='grep --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -82,9 +119,9 @@ alias rgrep='rgrep --color=auto'
 alias c++11='c++ -Wall -Wextra -std=c++11'
 alias c++14='c++ -Wall -Wextra -std=c++14'
 
+######################################################################
 # user local bash config
-if [ -f ~/.local/bash_local.sh ]; then
-    source ~/.local/bash_local.sh
+######################################################################
+if [ -f "$HOME/.local/bash_local.sh" ]; then
+    source "$HOME/.local/bash_local.sh"
 fi
-
-cd $HOME

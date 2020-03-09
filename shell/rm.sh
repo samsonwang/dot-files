@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# code from https://github.com/kaelzhang/shell-safe-rm
+# change file name pattern to fit in windows file system
+
 # You could modify these environment variables to change the default constants
 # Default to ~/.Trash on Mac, ~/.local/share/Trash/files on Linux.
 DEFAULT_TRASH="$HOME/.Trash"

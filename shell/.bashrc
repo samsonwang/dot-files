@@ -11,6 +11,6 @@ if [ -f /etc/bash.bashrc ]; then
 fi
 
 # common used init file
-if [ -f ~/.local/init.sh ]; then
-    source ~/.local/init.sh
+if [ -f "$HOME/.local/init.sh" ]; then
+    source "$HOME/.local/init.sh"
 fi
