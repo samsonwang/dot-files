@@ -47,17 +47,16 @@ alias la='ll -a'
 alias cp='cp -i'
 
 # when delte a file, move it to trash
-alias rrm='rm'
-alias rm=trash
-alias lrm='la ~/.trash'
-alias unrm=undelfile
-undelfile() {
-    mv -i ~/.trash/$@ ./
-}
-
-trash() {
-    mv $@ ~/.trash/
-}
+#alias rrm='rm'
+alias rm='~/.local/rm.sh'
+#alias lrm='la ~/.trash'
+#alias unrm=undelfile
+#undelfile() {
+#    mv -i ~/.trash/$@ ./
+#}
+#trash() {
+#    mv $@ ~/.trash/
+#}
 
 # git related alias
 alias g='git status --short -b'
