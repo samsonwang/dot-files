@@ -8,6 +8,7 @@ if [ -d ~/.local ]; then
 fi
 
 cp -f rm.sh ~/.local/
+cp -f z.sh ~/.local/
 cp -f init.sh ~/.local/
 
 
