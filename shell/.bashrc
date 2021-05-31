@@ -12,5 +12,7 @@ fi
 
 # common used init file
 if [ -f "$HOME/.local/init.sh" ]; then
-    source "$HOME/.local/init.sh"
+    source "$HOME/.local/init.sh" > /dev/null
 fi
+
+# echo "bashrc"

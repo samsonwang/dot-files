@@ -7,10 +7,20 @@ if [ -d ~/.local ]; then
     mkdir -p ~/.local
 fi
 
-cp -f rm.sh ~/.local/
-cp -f z.sh ~/.local/
-cp -f init.sh ~/.local/
+declare -a files=(
+    "rm.sh"
+    "z.sh"
+    "init.sh"
+    "init_local.sh"
+    "init_env.sh"
+    "init_env_local.sh"
+)
 
+for i in "${files[@]}"
+do
+    echo "copy $i"
+    cp -f "$i" ~/.local/
+done
 
 # source is not interactive, use bash interactive mode
 # bash -i ~/.bashrc

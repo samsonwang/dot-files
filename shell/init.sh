@@ -1,39 +1,41 @@
 #!/bin/bash
 
+echo "bash init"
+
 # prevent from loading twice
 if [ -z "$_INIT_SH_LOADED" ]; then
     _INIT_SH_LOADED=1
 else
+    echo "init skipped"
     return
 fi
 
-# if not running interactively, don't do anything
+
+######################################################################
+# bash env
+######################################################################
+if [ -f "$HOME/.local/init_env.sh" ]; then
+    source "$HOME/.local/init_env.sh"
+    export BASH_ENV="$HOME/.local/init_env.sh"
+fi
+
+
+######################################################################
+# user local bash config
+######################################################################
+if [ -f "$HOME/.local/init_local.sh" ]; then
+    echo "source local"
+    source "$HOME/.local/init_local.sh"
+fi
+
+
+######################################################################
+# if not running interactively, skip below
+######################################################################
 case $- in
     *i*) ;;
     *) return;;
 esac
-
-# put ~/.local/bin in PATH
-if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# clean up PATH, remove duplicates
-if [ -n "$PATH" ]; then
-    old_PATH=$PATH:; PATH=
-    while [ -n "$old_PATH" ]; do
-        x=${old_PATH%%:*}
-        case $PATH: in
-           *:"$x":*) ;;
-           *) PATH=$PATH:$x;;
-        esac
-        old_PATH=${old_PATH#*:}
-    done
-    PATH=${PATH#:}
-    unset old_PATH x
-fi
-
-export PATH
 
 # perfer english as default
 export LANG="en_US.utf-8"
@@ -119,14 +121,8 @@ alias rgrep='rgrep --color=auto'
 alias c++11='c++ -Wall -Wextra -std=c++11'
 alias c++14='c++ -Wall -Wextra -std=c++14'
 
+
 ######################################################################
 # setup z.sh
 ######################################################################
 source "$HOME/.local/z.sh"
-
-######################################################################
-# user local bash config
-######################################################################
-if [ -f "$HOME/.local/bash_local.sh" ]; then
-    source "$HOME/.local/bash_local.sh"
-fi
