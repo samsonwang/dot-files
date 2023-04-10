@@ -5,8 +5,8 @@ sort: by_weight
 use_preset_vocabulary: true
 import_tables:
   - luna_pinyin
-  - luna_pinyin.poetry
-  - luna_pinyin.xiandaihanyuchangyongcibiao
-  - luna_pinyin.wangluoliuxingxinci
-  - luna_pinyin.jisuanjicihuidaquan
+  - cn_dicts/luna_pinyin.poetry
+  - cn_dicts/luna_pinyin.xiandaihanyuchangyongcibiao
+  - cn_dicts/luna_pinyin.wangluoliuxingxinci
+  - cn_dicts/luna_pinyin.jisuanjicihuidaquan
 ...
