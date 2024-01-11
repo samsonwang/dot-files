@@ -2,7 +2,9 @@ customization:
   distribution_code_name: Weasel
   distribution_version: 0.15.0.0
   generator: "Weasel::UIStyleSettings"
-  modified_time: "Thu Jan 11 10:53:41 2024"
+  modified_time: "Thu Jan 11 13:50:47 2024"
   rime_version: 1.8.5
 patch:
-  "style/color_scheme": aqua
+  style/color_scheme: aqua
+  style/horizontal: false   # 候选项横排：true；false
+
