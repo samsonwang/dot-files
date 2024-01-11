@@ -6,7 +6,7 @@
 
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2023-03-03'
+config_version: '2024-01-11'
 
 
 # 方案列表
@@ -15,14 +15,12 @@ schema_list:
   - schema: double_pinyin
   - schema: double_pinyin_flypy
 
-
 # 菜单
 menu:
   page_size: 5  # 候选词个数
   # 好像只有鼠须管支持的属性：
   # alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨, ⑩ ]  # 修改候选项标签
   # alternative_select_keys: ASDFGHJKL  # 如编码字符占用数字键，则需另设选字键
-
 
 # 方案选单相关
 switcher:

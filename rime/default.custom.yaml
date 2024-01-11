@@ -11,12 +11,13 @@ patch:
     - {schema: luna_pinyin}
     - {schema: luna_quanpin}
 #    - {schema: bopomofo} # 注音
-  switcher/caption: "〔切换〕"
-  menu/page_size: 6
+  switcher/caption: "〔方案切换〕"
+  menu/page_size: 8
   key_binder/bindings:
-    - {accept: Shift, toggle: ascii_mode, when: always}
-    - {accept: minus, send: Page_Up, when: has_menu}
-    - {accept: equal, send: Page_Down, when: has_menu}
+    - { when: always, accept: Shift, toggle: ascii_mode }
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: composing, accept: KP_Enter, send: Return }
 #    - {accept: ISO_Left_Tab, send: Page_Up, when: composing}
 #    - {accept: "Shift+Tab", send: Page_Up, when: composing}
 #    - {accept: Tab, send: Page_Down, when: composing}
@@ -42,5 +43,7 @@ patch:
     Caps_Lock: commit_code
     Shift_L: commit_code
     Shift_R: commit_code
+    KP_Enter: commit_code
     Control_L: noop
     Control_R: noop
+
