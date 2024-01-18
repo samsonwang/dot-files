@@ -6,5 +6,11 @@ customization:
   rime_version: 1.8.5
 patch:
   style/color_scheme: aqua
-  style/horizontal: false   # 候选项横排：true；false
+  style/horizontal: false                             # 候选项横排：true；false
+  style/layout/candidate_spacing: 0                   # 候选项之间的间距
+  style/layout/hilite_padding: 5                      # 高亮区域和内部文字的间距，影响高亮区域大小
+  style/layout/corner_radius: 5                       # 候选窗口圆角半径
+  style/layout/round_corner: 5                        # 候选背景色块圆角半径，又名 hilited_corner_radius
+
+
 
